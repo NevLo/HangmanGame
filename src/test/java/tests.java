@@ -184,5 +184,9 @@ public class tests extends TestCase{
 			assert(true);
 		} 
 	}
+	@Test
+	public void test() {
+		assertEquals(1,2);
+	}
 }
 
