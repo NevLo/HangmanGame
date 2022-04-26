@@ -33,4 +33,4 @@ jobs:
       run: | 
         ls -l
         cd src/test
-        mvn --batchmode tests
+        mvn --batch-mode test
