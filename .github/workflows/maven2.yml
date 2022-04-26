@@ -22,15 +22,5 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
-  
-    - name: Build
-      run: mvn --batch-mode -DskipTests package
-    
-    - name: Test
-      run: mvn --batch-mode test
-
-    - name: show directory
-      run: | 
-        ls -l
-        cd src/test
-        mvn --batch-mode test
+    - name: Build with Maven
+      run: mvn -B package --file pom.xml
