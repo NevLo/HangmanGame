@@ -26,3 +26,8 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: Run tests with Maven
       run: mvn --batch-mode -Dmaven.test.failure.ignore=true test
+    - name: Publish Unit Test Results
+      uses: EnricoMi/publish-unit-test-result-action@v1
+      if: always()
+      with:
+        files: "test-results/**/*.xml"
