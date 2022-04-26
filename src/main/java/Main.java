@@ -32,5 +32,6 @@ class Main {
       in = s.nextLine();
     }while(in.equals("yes"));
     
+    System.out.println("Thanks for playing!");
   }
 }
