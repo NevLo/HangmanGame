@@ -22,10 +22,18 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
-    - name: Build with Maven
-      run: mvn -B package --file pom.xml
-    - name: Run tests with Maven
+  
+    - name: Build
+      run: mvn --batch-mode -DskipTests package
+    
+    - name: Test
       run: mvn --batch-mode -Dmaven.test.failure.ignore=true test
-    - name: Publish Unit Test Results
+
+    - name: Report
+      uses: dorny/test-reporter@v1
       if: always()
-      uses: scacap/action-surefire-report@v1
+      with:
+          name: Maven Tests
+          path: target/surefire-reports/*.xml
+          reporter: java-junit
+          fail-on-error: true
