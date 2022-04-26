@@ -27,10 +27,4 @@ jobs:
       run: mvn --batch-mode -DskipTests package
     
     - name: Test
-      run: mvn --batch-mode -Dmaven.test.failure.ignore=true test
-
-    - name: Report
-      uses: dorny/test-reporter@v1
-      if: always()
-      with:
-          name: Maven Tests
+      run: mvn --batch-mode test
