@@ -186,7 +186,7 @@ public class tests extends TestCase{
 	}
 	@Test
 	public void test() {
-		assertEquals(1,2);
+		assertEquals(1,2); 
 	}
 }
 
