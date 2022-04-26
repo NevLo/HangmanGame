@@ -27,7 +27,7 @@ jobs:
       run: mvn --batch-mode -DskipTests package
     
     - name: Test
-      run: mvn --batch-mode tests
+      run: mvn --batch-mode test
 
     - name: show directory
       run: | 
