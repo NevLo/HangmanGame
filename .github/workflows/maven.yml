@@ -29,8 +29,3 @@ jobs:
     - name: Test
       run: mvn --batch-mode test
 
-    - name: show directory
-      run: | 
-        ls -l
-        cd src/test
-        mvn --batch-mode test
